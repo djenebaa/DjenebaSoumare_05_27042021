@@ -1,0 +1,23 @@
+img{
+ height: 100px;
+ width: 200px;
+}
+.Logo img{
+    height: 15vh;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3e9f1;
+}
+.row{
+    display: flex;
+    justify-content: center;  
+}
+.d-flex{
+    background-color: rgb(236, 205, 236);   
+    border-radius: 1em;
+    max-width: 70vh;
+    height: 100px;
+    }
