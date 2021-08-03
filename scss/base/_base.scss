@@ -1,6 +1,6 @@
 img{
- height: 100px;
- width: 200px;
+ height: 50%;
+ width: 50%;
 }
 .Logo img{
     height: 15vh;
@@ -11,13 +11,26 @@ nav{
     justify-content: space-between;
     background-color: #f3e9f1;
 }
-.row{
+h1{
+    font-family: Cambria, Cochin, Georgia;
+    font-weight:900;
+    
+}
+.container{
     display: flex;
-    justify-content: center;  
+    justify-content: center;
 }
 .d-flex{
-    background-color: rgb(236, 205, 236);   
+    margin: 1em;  
     border-radius: 1em;
     max-width: 70vh;
-    height: 100px;
+    height: 50%;
+    width: 50%;
     }
+#Bears{
+    background-color: rgb(236, 205, 236);
+    border-radius: 2em;
+    margin: 2em;
+    
+}
+
