@@ -33,4 +33,21 @@ h1{
     margin: 2em;
     
 }
+.displayproducts{
+background-color: rgb(211, 201, 201);
 
+
+}
+.products-info{
+display: flex;
+align-items: flex-end;
+height: 50vh;
+width: 100%;
+
+}
+.Cart{
+    color: hotpink;
+}
+li{
+    list-style-type: none;
+}
