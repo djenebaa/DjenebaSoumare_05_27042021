@@ -24,7 +24,7 @@ function Displayinfo(info) {
   document.getElementById("Products-content").innerHTML += `
 <div class="container displayproducts">
    <div class="products-info 1">
-        <h1> ${info.name} </h1>
+        <title>${info.name}</title>
         <img src="${info.imageUrl}" alt="image de ${info.name}" >
    </div>
    <div class="profuct-info 2">
@@ -98,7 +98,7 @@ function Displayinfo(info) {
       Total.push(ProductOrder)
       localStorage.setItem("product", JSON.stringify(Total));
       console.log(Total);
-      Confimation();
+      Confirmation();
     }
     // ********ProductoffLocalStorage
     else {
