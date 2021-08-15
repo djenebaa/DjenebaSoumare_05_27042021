@@ -32,17 +32,13 @@ function Displayinfo(info) {
         <p>${info.price / 100}€</p>
   </div>
 </div>
-
  <form>
   <label for="products-choice"> Please choose an option </label>
    <select name ="products-choice" id="products-choice">
     
    </select>
  </form>
-
-
  <button type="submit" id="products-submit">Add to Cart</button>
-
   
  `;
   // **************Quantity of option***************************
@@ -70,18 +66,18 @@ function Displayinfo(info) {
 
     //  ***********Order info*********************
     let ProductOrder = {
+       _Id: info._id,
       ProductName: info.name,
-      infosId: info._id,
-      color_choice: FormChoice,
-      quantity: 1,
       price: info.price / 100,
+      quantity: 1,
+      color_choice: FormChoice,
     };
     console.log(ProductOrder);
 
     // ************Local Storage *************************
 
     // **********Panier
-    let Total = JSON.parse(localStorage.getItem("product"));
+    let Total = JSON.parse(localStorage.getItem("products"));
 
     console.log(Total);
     // ********************Confirmation
@@ -96,7 +92,7 @@ function Displayinfo(info) {
     // ********ProductonLocalStorage
     if (Total) {
       Total.push(ProductOrder)
-      localStorage.setItem("product", JSON.stringify(Total));
+      localStorage.setItem("products", JSON.stringify(Total));
       console.log(Total);
       Confirmation();
     }
@@ -104,7 +100,7 @@ function Displayinfo(info) {
     else {
       Total = [];
       Total.push(ProductOrder);
-      localStorage.setItem("product", JSON.stringify(Total));
+      localStorage.setItem("products", JSON.stringify(Total));
       console.log(Total);
       Confirmation();
     }
