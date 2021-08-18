@@ -21,17 +21,17 @@ function Getinfo(infosId) {
     });
 }
 function Displayinfo(info) {
-  document.getElementById("Products-content").innerHTML += `
-<div class="container displayproducts">
-   <div class="products-info 1">
-        <title>${info.name}</title>
-        <img src="${info.imageUrl}" alt="image de ${info.name}" >
+  document.getElementById("Products-content").innerHTML += 
+  ` 
+<div class=" displayproducts">
+<h1>${info.name}</h1>
+   <div class="products-info-1">
+        <img src="${info.imageUrl}" alt="image de ${info.name}">
    </div>
-   <div class="profuct-info 2">
-        <p> ${info.description}</p>
-        <p>${info.price / 100}€</p>
+   <div class="products-info-2">
+        <p> <strong> Description</strong>  : ${info.description}</p>
+        <p><strong> Price </strong> : ${info.price / 100}€</p>
   </div>
-</div>
  <form>
   <label for="products-choice"> Please choose an option </label>
    <select name ="products-choice" id="products-choice">
@@ -39,7 +39,7 @@ function Displayinfo(info) {
    </select>
  </form>
  <button type="submit" id="products-submit">Add to Cart</button>
-  
+  </div>
  `;
   // **************Quantity of option***************************
   const QuantityOption = info.colors;
@@ -82,7 +82,7 @@ function Displayinfo(info) {
     console.log(Total);
     // ********************Confirmation
     const Confirmation = () =>{
-      if(window.confirm(`${info.name} option: ${FormChoice} your product was added to cart tap ok for consult your cart or annuler for go to firstpage` )){
+      if(window.confirm(`Your product was added to cart tap ok for consult your cart or annuler for go to firstpage` )){
         window.location.href = "panier.html"
       }
       else{

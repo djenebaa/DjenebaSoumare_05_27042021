@@ -2,15 +2,6 @@ img{
  height: 50%;
  width: 50%;
 }
-.Logo img{
-    height: 15vh;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f3e9f1;
-}
 h1{
     font-family: Cambria, Cochin, Georgia;
     font-weight:900;
@@ -20,37 +11,109 @@ h1{
     display: flex;
     justify-content: center;
 }
-.d-flex{
-    margin: 1em;  
-    border-radius: 1em;
-    max-width: 70vh;
-    height: 50%;
-    width: 50%;
-    }
-#Bears{
-    background-color: rgb(236, 205, 236);
-    border-radius: 2em;
-    margin: 2em;
-    
-}
-.displayproducts{
-background-color: rgb(211, 201, 201);
-
-
-}
-.products-info{
-display: flex;
-align-items: flex-end;
-height: 50vh;
-width: 100%;
-
+li{
+    list-style-type: none;
 }
 .Cart{
     color: hotpink;
 }
-li{
-    list-style-type: none;
+a{
+    text-decoration: none;
+    color: black;
 }
+// ************Nav***********************
+.Logo img{
+    height: 15vh;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3e9f1;
+    min-height: 3em;
+}
+
+// **************Accueil*****************
+#Bears{
+    background-color: rgb(236, 205, 236);
+    border-radius: 2em;
+    margin: 2em;
+    & p{
+        text-align: center;
+        font-weight: bold;
+    }
+}
+.indexproduct{
+    margin: 1em;  
+    border-radius: 1em;
+    max-width: 70vh;
+    height: 50%;
+    width: 100%;
+    color: black;
+ & img{
+     border-radius: 1em;
+ }
+}
+// ******************Page produit ************************
+#Products-content{
+    display: flex;
+    justify-content: center;
+}
+.displayproducts{
+background-color:#f3e9f1;;
+text-align: center;
+max-width: 90vh;
+margin: 1em;
+& img{
+    width: 60vh;
+}
+}
+.products-info-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+// ***************Formulaire************************
 .form-group{
     margin: 0.5em;
+}
+#loginForm{
+    background-color: #f3e9f1;
+}
+.formtitle{
+    font-weight: bold;
+}
+// ***************Panier order***************************
+#cart_resume{
+    margin: 1em;
+   display: flex;
+   justify-content: center;
+}
+.resumeorder{
+    
+}
+thead{
+    border: 2px solid rgb(43, 40, 40);
+    background-color: #916e8a;
+}
+th, td{
+    border: 1px solid rgb(48, 44, 44);
+}
+
+// ******************Confirmation order****************************
+#ship{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: #c5a0be;
+}
+.order_confirm{
+  background-color: rgb(154, 120, 187);
+  margin: 5em;
+}
+.confirm{
+    background-color: #c5a0be;
+    & a{
+ margin: 1em;
+    }
 }

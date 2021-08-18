@@ -3,6 +3,33 @@ img {
   width: 50%;
 }
 
+h1 {
+  font-family: Cambria, Cochin, Georgia;
+  font-weight: 900;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.Cart {
+  color: hotpink;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .Logo img {
   height: 15vh;
 }
@@ -18,28 +45,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #f3e9f1;
-}
-
-h1 {
-  font-family: Cambria, Cochin, Georgia;
-  font-weight: 900;
-}
-
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.d-flex {
-  margin: 1em;
-  border-radius: 1em;
-  max-width: 70vh;
-  height: 50%;
-  width: 50%;
+  min-height: 3em;
 }
 
 #Bears {
@@ -48,31 +54,109 @@ h1 {
   margin: 2em;
 }
 
-.displayproducts {
-  background-color: #d3c9c9;
+#Bears p {
+  text-align: center;
+  font-weight: bold;
 }
 
-.products-info {
+.indexproduct {
+  margin: 1em;
+  border-radius: 1em;
+  max-width: 70vh;
+  height: 50%;
+  width: 100%;
+  color: black;
+}
+
+.indexproduct img {
+  border-radius: 1em;
+}
+
+#Products-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 50vh;
-  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.Cart {
-  color: hotpink;
+.displayproducts {
+  background-color: #f3e9f1;
+  text-align: center;
+  max-width: 90vh;
+  margin: 1em;
 }
 
-li {
-  list-style-type: none;
+.displayproducts img {
+  width: 60vh;
+}
+
+.products-info-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .form-group {
   margin: 0.5em;
+}
+
+#loginForm {
+  background-color: #f3e9f1;
+}
+
+.formtitle {
+  font-weight: bold;
+}
+
+#cart_resume {
+  margin: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+thead {
+  border: 2px solid #2b2828;
+  background-color: #916e8a;
+}
+
+th, td {
+  border: 1px solid #302c2c;
+}
+
+#ship {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #c5a0be;
+}
+
+.order_confirm {
+  background-color: #9a78bb;
+  margin: 5em;
+}
+
+.confirm {
+  background-color: #c5a0be;
+}
+
+.confirm a {
+  margin: 1em;
 }
 
 #products-submit {

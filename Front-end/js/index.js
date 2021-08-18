@@ -1,30 +1,33 @@
 // ****************Product Display***************************
-Bears()
+Bears();
 async function Bears() {
-  const products = await Getproduct()
+  const products = await Getproduct();
   for (product of products) {
-    DisplayProduct(product)
+    DisplayProduct(product);
   }
 }
 function Getproduct() {
- return fetch(`http://localhost:3000/api/teddies`)
+  return fetch(`http://localhost:3000/api/teddies`)
     .then(function (Response) {
-      return Response.json()
+      return Response.json();
     })
     .then(function (products) {
-      return products
+      return products;
     })
     .catch(function (error) {
-      alert(error)
-    })
+      alert(error);
+    });
 }
 function DisplayProduct(products) {
-  document.getElementById("Bears").innerHTML +=`
+  document.getElementById("Bears").innerHTML += `
+  <p class="productname"> ${products.name} </p>
   <a href="Produit.html?id=${products._id}"> 
   <div class="container AllProduct">
-          <div class="d-flex">
-        <img src=${products.imageUrl}>
-        </div>   
+          <div class="d-flex indexproduct">
+          <img src=${products.imageUrl} class="container bears">  
+        
+        </div>
+        </div>
   </div> 
   </a>
   `;
