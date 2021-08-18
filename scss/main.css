@@ -127,12 +127,12 @@ nav {
 }
 
 thead {
-  border: 2px solid #2b2828;
-  background-color: #916e8a;
+  border: 2px solid #c0bcbc;
+  background-color: #eccdec;
 }
 
 th, td {
-  border: 1px solid #302c2c;
+  border: 2px solid #dbd8d8;
 }
 
 #ship {

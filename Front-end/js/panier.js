@@ -19,8 +19,8 @@ function displayresume(res) {
 `;
 }
 // ******************Total***********************
-total();
-function total (){
+// total();
+// function total (){
   
  let total =[];
 for(let t = 0; t<resum.length; t++){
@@ -34,7 +34,8 @@ for(let t = 0; t<resum.length; t++){
  document.querySelector(".Total").innerHTML+=`
  Total: ${total_price}€
  `
-}
+ localStorage.setItem("total", JSON.stringify(total_price));
+
 
 
 // ************************Variable du formulaire 
@@ -84,6 +85,7 @@ function send_order() {
           .then((data) => {
               localStorage.clear("products")
               localStorage.setItem("order", JSON.stringify(data))
+              localStorage.setItem("total", JSON.stringify(total_price))
               document.location.href = "Confirmation.html";
           })
           .catch((erreur) => console.log("erreur : " + erreur));
