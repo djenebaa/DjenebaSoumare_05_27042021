@@ -49,7 +49,7 @@ nav {
 }
 
 #Bears {
-  background-color: #eccdec;
+  background-color: #f3e9f1;
   border-radius: 2em;
   margin: 2em;
 }
@@ -133,6 +133,10 @@ thead {
 
 th, td {
   border: 2px solid #dbd8d8;
+}
+
+.container-emptycart {
+  background-color: #dbd8d8;
 }
 
 #ship {

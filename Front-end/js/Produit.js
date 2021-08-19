@@ -23,7 +23,7 @@ function Getinfo(infosId) {
 function Displayinfo(info) {
   document.getElementById("Products-content").innerHTML += 
   ` 
-<div class=" displayproducts">
+<div class=" displayproducts container-fluid">
 <h1>${info.name}</h1>
    <div class="products-info-1">
         <img src="${info.imageUrl}" alt="image de ${info.name}">

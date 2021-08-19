@@ -11,39 +11,69 @@ function displayresume(res) {
   document.querySelector(".order_resume").innerHTML += `
     <tr>
       <td>${res.ProductName}</td>
-      <td>${res._Id}</td>
       <td>${res.color_choice}</td>
       <td>${res.quantity}</td>
       <td>${res.price}€ </td>
+      <td><input type="button" value="Delete" class="delete-btn"> </td>
     </tr>
 `;
 }
+// *****************Panier vide********************
+if (resum === null || resum == 0 ) {
+ const emptycart=`
+ <div class ="container-emptycart">
+ <div> The cart is empty </div>
+ </div>
+ `;
+ document.getElementById("cart_resume").innerHTML = emptycart;
+}
+// *********************Delete product*************
+let delete_button = document.querySelectorAll(".delete-btn");
+console.log(delete_button);
+for (let i = 0; i < delete_button.length; i++) {
+  delete_button[i].addEventListener("click",(e) =>{
+    e.preventDefault();
+    // ************Id du produit a supprimer
+    let productdelete = resum[i]._Id;
+    console.log(productdelete);
+    // ***************Choix element a suppimer************
+    resum = resum.filter( elm => elm._Id !== productdelete);
+      console.log(resum);
+      // *****************Envoi de le localstorage
+      localStorage.setItem("products", JSON.stringify(resum));
+      // ****************Alert
+      alert("this product as being delete")
+      window.location.href ="panier.html"
+  })
+
 // ******************Total***********************
-// total();
-// function total (){
-  
- let total =[];
+   //  ******Price to total******
+let total =[];
 for(let t = 0; t<resum.length; t++){
   let price = resum[t].price;
-  // **********price in total**********
   total.push(price)
-}
- const reduce = (accumulator, value) => accumulator + value;
+} 
+const reduce = (accumulator, value) => accumulator + value;
  const total_price = total.reduce(reduce);
- console.log(total_price); 
- document.querySelector(".Total").innerHTML+=`
- Total: ${total_price}€
+ console.log(total_price);
+  // **********Price display to html**********
+    document.querySelector(".resumetotal").innerHTML+=`
+ <p>Total : ${total_price}€</p> 
  `
- localStorage.setItem("total", JSON.stringify(total_price));
+ 
+//  ***********************Price to localstorage
+ localStorage.setItem("total", JSON.stringify(total_price)); 
+ 
+ 
 
 
 
 // ************************Variable du formulaire 
 const submit = document.querySelector("#submit_order");
-const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
-const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
-const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
-const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
+const nameregex = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
+const cityregex = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
+const emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
+const addressregex = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
 // **********************Envoi des information au backend***********************************
 send_order();
@@ -59,12 +89,12 @@ function send_order() {
   };
   // on valide que le formulaire soit correctement rempli
   if (
-      (regexMail.test(contact.email) == true) &
-      (regexName.test(contact.firstName) == true) &
-      (regexName.test(contact.lastName) == true) &
-      (regexCity.test(contact.city) == true) &
-      (regexAddress.test(contact.address) == true)
-  ) {
+      (emailregex.test(contact.email) == true) &
+      (nameregex.test(contact.firstName) == true) &
+      (nameregex.test(contact.lastName) == true) &
+      (cityregex.test(contact.city) == true) &
+      (addressregex.test(contact.address) == true)
+  ){
       e.preventDefault();
       let products = [];
       for (listid of resum) {
@@ -96,4 +126,4 @@ function send_order() {
   }
 });
 }
-
+}
