@@ -74,7 +74,78 @@ function deleteproduct() {
     /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
   const emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
   const addressregex = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
-
+  let email= document.querySelector("#email");
+  let Fname = document.querySelector("#firstName");
+  let Lname = document.querySelector("#lastName")
+  // *************Email regex valid*******
+  email.addEventListener("change", function(){
+    validEmail(this)
+});
+  const validEmail = function (inputEmail){
+    //recuperation de la balise small
+     let small = inputEmail.nextElementSibling;
+    
+     // On test la regex
+     if(emailregex.test(inputEmail.value)){
+      small.innerHTML="Valid email ";
+      small.classList.remove("text-danger");
+      small.classList.add("text-success");
+      return true;
+     }
+     else{
+      small.innerHTML="Invalid email must be : email@gmail.com"  
+      small.classList.remove("text-success");
+      small.classList.add("text-danger");
+      return false;
+     }
+    
+    };
+    // ***************firstName regex valid*************
+    Fname.addEventListener("change", function(){
+      validname(this)
+    });
+    const validname = function (inputname){
+      //recuperation de la balise small
+     let small = inputname.nextElementSibling;
+    
+       // On test la regex
+       if(nameregex.test(inputname.value)){
+        small.innerHTML="Valid";
+        small.classList.remove("text-danger");
+        small.classList.add("text-success");
+        return true;
+       }
+       else{
+        small.innerHTML="Invalid must not contain number or special caracter"  
+        small.classList.remove("text-success");
+        small.classList.add("text-danger");
+        return false;
+       }
+      
+      };
+      // ******************Lastname regex valid*************
+      Lname.addEventListener("change", function(){
+        validname(this)
+      });
+      const validLname = function (inputLname){
+        //recuperation de la balise small
+       let small = inputLname.nextElementSibling;
+      
+         // On test la regex
+         if(nameregex.test(inputLname.value)){
+          small.innerHTML="Valid";
+          small.classList.remove("text-danger");
+          small.classList.add("text-success");
+          return true;
+         }
+         else{
+          small.innerHTML="Invalid must not contain number or special caracter "  
+          small.classList.remove("text-success");
+          small.classList.add("text-danger");
+          return false;
+         }
+        
+        };
   // **********************Envoi des information au backend***********************************
   send_order();
   function send_order() {
@@ -94,7 +165,8 @@ function deleteproduct() {
         (nameregex.test(contact.lastName) == true) &
         (cityregex.test(contact.city) == true) &
         (addressregex.test(contact.address) == true)
-      ) {
+        )
+         {
         e.preventDefault();
         let products = [];
         for (listid of resum) {
@@ -120,7 +192,8 @@ function deleteproduct() {
             document.location.href = "Confirmation.html";
           })
           .catch((erreur) => console.log("erreur : " + erreur));
-      } else {
+      } 
+      else {
         alert("Please fill in all the fields of the form");
       }
     });
