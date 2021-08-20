@@ -1,9 +1,10 @@
-
-  const order = JSON.parse(localStorage.getItem("order"));
+ const order = JSON.parse(localStorage.getItem("order"));
   const products =JSON.parse(localStorage.getItem("products"));
   const total =JSON.parse(localStorage.getItem("total"));
+ 
  order_info();
   function order_info() {
+    
     localStorage.clear
     document.getElementById("ship").innerHTML+=`
     <div class="container-fluid order_confirm">
