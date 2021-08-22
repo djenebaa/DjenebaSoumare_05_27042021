@@ -35,13 +35,12 @@ function Displayinfo(info) {
  <form>
   <label for="products-choice"> Please choose an option </label>
    <select name ="products-choice" id="products-choice">
-    
    </select>
  </form>
  <button type="submit" id="products-submit">Add to Cart</button>
   </div>
  `;
-  // **************Quantity of option***************************
+  // **************Quantity of option(color)***************************
   const QuantityOption = info.colors;
   for (let c = 0; c < QuantityOption.length; c++) {
     document.getElementById("products-choice").innerHTML += `
@@ -49,7 +48,6 @@ function Displayinfo(info) {
  
   `;
   }
-
   //  ******************Id formulaire************************
   const FormId = document.querySelector("#products-choice");
 

@@ -76,7 +76,7 @@ function deleteproduct() {
   const addressregex = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
   let email= document.querySelector("#email");
   let Fname = document.querySelector("#firstName");
-  let Lname = document.querySelector("#lastName")
+  let Lname = document.querySelector("#lastName");
   // *************Email regex valid*******
   email.addEventListener("change", function(){
     validEmail(this)
